@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="stayyule">
+
+    <title>Cyber Range Control Panel</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Cyber Range</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><button id="overview" class="btn btn-primary btn-block btn-lg" >Overview</button></li>
+            <li><button id="bps_link" class="btn btn-danger btn-block btn-lg" >BPS</button></li>
+            <li><button id="atip_link" class="btn btn-info btn-block btn-lg" >ATIP</button></li>
+			<li><button id="nto_link" class="btn btn-warning btn-block btn-lg" >NTO</button></li>
+			<li><button id="splunk_link" class="btn btn-primary btn-block btn-lg" >Splunk</button></li>
+			<li><button id="kali_link" class="btn btn-danger btn-block btn-lg" >Kali</button></li>
+			<li><button id="metasploitable_link" class="btn btn-info btn-block btn-lg" >Attack Target</button></li>
+			<li><button id="ips_link" class="btn btn-warning btn-block btn-lg" >IPS</button></li>
+			<li><button id="ngfw_link" class="btn btn-primary btn-block btn-lg" >NGFW</button></li>
+			<li><button id="dlp_link" class="btn btn-danger btn-block btn-lg" >DLP</button></li>
+			<li><button id="windows_link" class="btn btn-info btn-block btn-lg" >Windows</button></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header" id="panel_title">Overview</h1>
+            <iframe id="link" class="col-md-12" height="500" src="cyberrange.jpg"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#overview").on('click',function(){
+			document.getElementById("panel_title").innerHTML = "Overview";
+			document.getElementById("link").src = "cyberrange.jpg";
+		});
+		$("#bps_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "BPS";
+			//document.getElementById("link").src = "http://192.168.0.108";
+			window.open('http://192.168.0.132');
+		});
+		$("#atp_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "6212 ATP";
+			//document.getElementById("link").src = "http://192.168.0.150";
+			window.open('http://192.168.0.150');
+		});
+		$("#nto_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "NTO";
+			//document.getElementById("link").src = "http://192.168.0.105";
+			window.open('ssh://192.168.0.105');
+		});
+		$("#splunk_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "Splunk";
+			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
+			window.open('http://192.168.0.133:8000/en-US/app/launcher/home');
+		});
+		$("#kali_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "Kali";
+			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
+			window.open('ssh://192.168.59.132/');
+		});
+		$("#metasploitable_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "Attack Target";
+			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
+			window.open('ssh://192.168.59.135/');
+		});
+		$("#dlp_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "DLP";
+			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
+			window.open('ssh://192.168.59.135/');
+		});
+		$("#ips_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "IPS"
+			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
+			window.open('ssh://192.168.59.135/');
+		});
+		$("#ngfw_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "NGFW"
+			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
+			window.open('ssh://192.168.59.135/');
+		});
+		$("#windows_link").on('click',function(){
+			//document.getElementById("panel_title").innerHTML = "Windows"
+			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
+			window.open('ssh://192.168.59.135/');
+		});
+	});
+	</script>
+  </body>
+</html>

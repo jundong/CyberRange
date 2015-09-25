@@ -51,7 +51,6 @@
             <li><button id="overview" class="btn btn-primary btn-block btn-lg" >Overview</button></li>
             <li><button id="bps_link" class="btn btn-danger btn-block btn-lg" >BPS</button></li>
             <li><button id="atip_link" class="btn btn-info btn-block btn-lg" >ATIP</button></li>
-			<li><button id="nto_link" class="btn btn-warning btn-block btn-lg" >NTO</button></li>
 			<li><button id="splunk_link" class="btn btn-primary btn-block btn-lg" >Splunk</button></li>
 			<li><button id="kali_link" class="btn btn-danger btn-block btn-lg" >Kali</button></li>
 			<li><button id="metasploitable_link" class="btn btn-info btn-block btn-lg" >Attack Target</button></li>
@@ -88,14 +87,9 @@
 			window.open('http://192.168.0.132');
 		});
 		$("#atp_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "6212 ATP";
+			//document.getElementById("panel_title").innerHTML = "ATIP";
 			//document.getElementById("link").src = "http://192.168.0.150";
 			window.open('http://192.168.0.150');
-		});
-		$("#nto_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "NTO";
-			//document.getElementById("link").src = "http://192.168.0.105";
-			window.open('ssh://192.168.0.105');
 		});
 		$("#splunk_link").on('click',function(){
 			//document.getElementById("panel_title").innerHTML = "Splunk";
@@ -105,32 +99,32 @@
 		$("#kali_link").on('click',function(){
 			//document.getElementById("panel_title").innerHTML = "Kali";
 			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.59.132/');
+			window.open('ssh://192.168.0.170/');
 		});
 		$("#metasploitable_link").on('click',function(){
 			//document.getElementById("panel_title").innerHTML = "Attack Target";
 			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.59.135/');
+			window.open('ssh://192.168.0.171/');
 		});
 		$("#dlp_link").on('click',function(){
 			//document.getElementById("panel_title").innerHTML = "DLP";
 			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.59.135/');
+			window.open('https://192.168.0.140/');
 		});
 		$("#ips_link").on('click',function(){
 			//document.getElementById("panel_title").innerHTML = "IPS"
 			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.59.135/');
+			window.open('https://192.168.0.134/');
 		});
 		$("#ngfw_link").on('click',function(){
 			//document.getElementById("panel_title").innerHTML = "NGFW"
 			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.59.135/');
+			window.open('https://192.168.0.101/');
 		});
 		$("#windows_link").on('click',function(){
 			//document.getElementById("panel_title").innerHTML = "Windows"
 			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.59.135/');
+			window.open('ssh://192.168.0.132/');
 		});
 	});
 	</script>

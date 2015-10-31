@@ -9,13 +9,25 @@
     <meta name="author" content="stayyule">
 
     <title>Cyber Range Control Panel</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="public/css/jquery-hotspotter-1.7.7.min.css">
+	<link rel="stylesheet" href="public/css/jquery-ui.css">
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
-
+    <link href="public/css/dashboard.css" rel="stylesheet">
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="public/libs/jquery-1.11.3.min.js"></script>
+	<script src="public/libs/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="public/libs/bootstrap.min.js"></script>
+    <!--<script src="public/libs/jquery-1.8.0.js"></script>-->
+	<script src="public/libs/jquery-hotspotter-1.7.7.min.js"></script>
+	<script src="public/js/overview.js"></script>
 </head>
 
   <body>
@@ -48,85 +60,78 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><button id="overview" class="btn btn-primary btn-block btn-lg" >Overview</button></li>
-            <li><button id="bps_link" class="btn btn-danger btn-block btn-lg" >BPS</button></li>
-            <li><button id="atip_link" class="btn btn-info btn-block btn-lg" >ATIP</button></li>
-			<li><button id="splunk_link" class="btn btn-primary btn-block btn-lg" >Splunk</button></li>
-			<li><button id="kali_link" class="btn btn-danger btn-block btn-lg" >Kali</button></li>
-			<li><button id="metasploitable_link" class="btn btn-info btn-block btn-lg" >Attack Target</button></li>
-			<li><button id="ips_link" class="btn btn-warning btn-block btn-lg" >IPS</button></li>
-			<li><button id="ngfw_link" class="btn btn-primary btn-block btn-lg" >NGFW</button></li>
-			<li><button id="dlp_link" class="btn btn-danger btn-block btn-lg" >DLP</button></li>
-			<li><button id="windows_link" class="btn btn-info btn-block btn-lg" >Windows</button></li>
+            <li><button id="bps_link" class="btn btn-danger btn-block btn-lg btn-inverse" >BPS</button></li>
+            <li><button id="atip_link" class="btn btn-info btn-block btn-lg btn-inverse" >ATIP</button></li>
+			<li><button id="splunk_link" class="btn btn-primary btn-block btn-lg btn-inverse" >Splunk</button></li>
+			<li><button id="kali_link" class="btn btn-danger btn-block btn-lg btn-inverse" >Kali</button></li>
+			<li><button id="metasploitable_link" class="btn btn-info btn-block btn-lg btn-inverse" >AttackTarget</button></li>
+			<li><button id="ips_link" class="btn btn-warning btn-block btn-lg btn-inverse" >IPS</button></li>
+			<li><button id="ngfw_link" class="btn btn-primary btn-block btn-lg btn-inverse" >NGFW</button></li>
+			<li><button id="dlp_link" class="btn btn-danger btn-block btn-lg btn-inverse" >DLP</button></li>
+			<li><button id="windows_link" class="btn btn-info btn-block btn-lg btn-inverse" >Windows</button></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header" id="panel_title">Overview</h1>
-            <iframe id="link" class="col-md-12" height="500" src="cyberrange.jpg"></iframe>
+			<div class="hs-area">
+				<img id="link" class="col-md-12" height="500" src="cyberrange.jpg"></img>
+				<div style="left: 330px; top: 325px; display: none;" class="hs-wrap">
+					<div style="width: 270px; height: 65px; border-radius: 3px;" data-handler="Aim" data-activeon="hover" data-dim="270,65,0" data-coord="330,325" class="invisible-spot" id="BPS"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 131.75px; top: 134px; display: none;" class="hs-wrap">
+					<div style="width: 30px; height: 29px; border-radius: 3px;" data-handler="Aim" data-activeon="hover" data-dim="30,29,0" data-coord="131.75,134" class="invisible-spot" id="ATIP"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 176.75px; top: 112px; display: none;" class="hs-wrap">
+					<div style="width: 26px; height: 25px; border-radius: 3px;" data-handler="Aim" data-activeon="hover" data-dim="26,25,0" data-coord="176.75,112" class="invisible-spot" id="Splunk"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 205px; top: 84px; display: none;" class="hs-wrap">
+					<div style="width: 25px; height: 24px; border-radius: 39px;" data-handler="Aim" data-activeon="hover" data-dim="25,24,39" data-coord="205,84" class="onhover-spot" id="Kali"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 260px; top: 79px; display: none;" class="hs-wrap">
+					<div style="width: 60px; height: 58px; border-radius: 16px;" data-handler="Aim" data-activeon="hover" data-dim="60,58,16" data-coord="260,79" class="red-spot" id="AttackTarget"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 335px; top: 51px; display: none;" class="hs-wrap">
+					<div style="width: 59px; height: 49px; border-radius: 3px;" data-handler="Aim" data-activeon="hover" data-dim="59,49,0" data-coord="335,51" class="invisible-spot" id="IPS"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 402px; top: 22px; display: none;" class="hs-wrap">
+					<div style="width: 44px; height: 42px; border-radius: 15px;" data-handler="Aim" data-activeon="hover" data-dim="44,42,15" data-coord="402,22" class="glass-spot" id="NGFW"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 454.75px; top: 0px; display: none;" class="hs-wrap">
+					<div style="width: 37px; height: 36px; border-radius: 3px;" data-handler="Aim" data-activeon="hover" data-dim="37,36,0" data-coord="454.75,0" class="invisible-spot" id="DLP"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>
+				<div style="left: 454.75px; top: 0px; display: none;" class="hs-wrap">
+					<div style="width: 37px; height: 36px; border-radius: 3px;" data-handler="Aim" data-activeon="hover" data-dim="37,36,0" data-coord="454.75,0" class="invisible-spot" id="Windows"></div>
+					<div class="tt-wrap">
+						
+					</div>
+				</div>	
+			</div>
         </div>
       </div>
     </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-	<script>
-	$(document).ready(function(){
-		$("#overview").on('click',function(){
-			document.getElementById("panel_title").innerHTML = "Overview";
-			document.getElementById("link").src = "cyberrange.jpg";
-		});
-		$("#bps_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "BPS";
-			//document.getElementById("link").src = "http://192.168.0.108";
-			window.open('http://192.168.0.132');
-		});
-		$("#atp_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "ATIP";
-			//document.getElementById("link").src = "http://192.168.0.150";
-			window.open('http://192.168.0.150');
-		});
-		$("#splunk_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "Splunk";
-			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('http://192.168.0.133:8000/en-US/app/launcher/home');
-		});
-		$("#kali_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "Kali";
-			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.0.170/');
-		});
-		$("#metasploitable_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "Attack Target";
-			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.0.171/');
-		});
-		$("#dlp_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "DLP";
-			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('https://192.168.0.140/');
-		});
-		$("#ips_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "IPS"
-			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('https://192.168.0.134/');
-		});
-		$("#ngfw_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "NGFW"
-			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('https://192.168.0.101/');
-		});
-		$("#windows_link").on('click',function(){
-			//document.getElementById("panel_title").innerHTML = "Windows"
-			//document.getElementById("link").src = "http://192.168.0.106:8000/en-US/app/launcher/home";
-			window.open('ssh://192.168.0.132/');
-		});
-	});
-	</script>
   </body>
 </html>
